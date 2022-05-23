@@ -16,3 +16,10 @@ func BenchmarkRoll(b *testing.B) {
 		Roll()
 	}
 }
+
+func BenchmarkRand(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		rand.Seed(42)
+		rand.Intn(5)
+	}
+}
